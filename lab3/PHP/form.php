@@ -12,7 +12,7 @@
     <input type="radio" checked="checked" name="man" value="man">man
   </label>
    <label>
-  <input type="radio" checked="checked" name="woman" value="woman">woman
+  <input type="radio" name="woman" value="woman">woman
    </label>
 </br>
   <?php
