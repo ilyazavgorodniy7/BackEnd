@@ -33,6 +33,10 @@ if (empty($_POST['year']) || !is_numeric($_POST['year']) || !preg_match('/^\d+$/
   print('Заполните год.<br/>');
   $errors = TRUE;
 }
+if (empty($_POST['gender'])) {
+  print('Заполните гендер.<br/>');
+  $errors = TRUE;
+}
 // *************
 // Тут необходимо проверить правильность заполнения всех остальных полей.
 // *************
