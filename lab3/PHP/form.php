@@ -9,10 +9,10 @@
   printf('Gender :')
   ?>
   <label>
-    <input type="radio" checked="checked" name="man" value="man">man
+    <input type="radio" checked="checked" name="radio" value="Мужской"> Мужской
   </label>
    <label>
-  <input type="radio" name="woman" value="woman">woman
+  <input type="radio" name="radio" value="Женский">Женский
    </label>
 </br>
   <?php
