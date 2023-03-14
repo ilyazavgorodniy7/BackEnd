@@ -25,7 +25,7 @@ if (empty($_POST['fio'])) {
   $errors = TRUE;
 }
 if (empty($_POST['mail']) || !preg_match('/@/', $_POST['mail']) ) {
-  print('Заполните почту.<br/>');
+  print('Заполните почту правильно.<br/>');
   $errors = TRUE;
 }
 
