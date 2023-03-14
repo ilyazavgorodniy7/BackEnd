@@ -14,6 +14,7 @@
    <label>
   <input type="radio" checked="checked" name="woman" value="woman">woman
    </label>
+</br>
   <?php
   printf('Count_limb :')
   ?>
