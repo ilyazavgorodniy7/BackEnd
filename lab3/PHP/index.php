@@ -99,10 +99,10 @@ try {
   $stmt->execute([$_POST['name'],$_POST['email'],$_POST['year'],$_POST['gender'],$_POST['count_limb'],$_POST['biography'],$_POST['checked']]);
   
   $id = $db->lastInsertId();
-  $sppe= $db->prepare("INSERT INTO abilities SET name=:name, person_id=:person");
+  $sppe= $db->prepare("INSERT INTO abilities SET power=:power, person_id=:person");
   $sppe->bindParam(':person', $id);
   foreach($abilities  as $ability){
-	$sppe->bindParam(':name', $ability);
+	$sppe->bindParam(':power', $ability);
 	if($sppe->execute()==false){
 	  print_r($sppe->errorCode());
 	  print_r($sppe->errorInfo());
