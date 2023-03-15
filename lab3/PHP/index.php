@@ -40,6 +40,14 @@ if (empty($_POST['count_limb'])) {
   print('Заполните кол-во конечностей.<br/>');
   $errors = TRUE;
 }
+if (empty($_POST['biography'])) {
+  print('Заполните биографию.<br/>');
+  $errors = TRUE;
+}
+if (empty($_POST['checked'])) {
+  print('Примите согласие.<br/>');
+  $errors = TRUE;
+}
 // *************
 // Тут необходимо проверить правильность заполнения всех остальных полей.
 // *************
@@ -58,8 +66,8 @@ $db = new PDO('mysql:host=localhost;dbname=u52805', $user, $pass,
 
 // Подготовленный запрос. Не именованные метки.
 try {
-  $stmt = $db->prepare("INSERT INTO person SET name = ?,mail= ?, year= ?, gender=?, count_limb=?");
-  $stmt->execute([$_POST['fio'],$_POST['mail'],$_POST['year'],$_POST['gender'],$_POST['count_limb']]);
+  $stmt = $db->prepare("INSERT INTO person SET name = ?,mail= ?, year= ?, gender=?, count_limb=?,biography=?,checked=?");
+  $stmt->execute([$_POST['fio'],$_POST['mail'],$_POST['year'],$_POST['gender'],$_POST['count_limb'],$_POST['biography'],$_POST['checked']]);
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
