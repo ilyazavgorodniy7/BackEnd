@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>Задание 2</title>
     <style>
       body {
         background: #86e0e0
@@ -12,7 +11,7 @@
   </head>
   <body>
 <h2>Форма</h2>
-      <form action="/" method="POST">
+      <form action="index.php" method="POST">
       <label>
         <h4>Имя:</h4>
         <input name="name" value="Имя">
@@ -33,32 +32,32 @@
       <br>
       <h4>Пол:</h4>
       <label>
-        <input type="radio" checked="checked" name="radio" value="Мужской"> Мужской
+        <input type="radio" checked="checked" name="gender" value="1"> Мужской
       </label>
       <br>
       <label>
-        <input type="radio" name="radio" value="Женский">Женский
+        <input type="radio" name="gender" value="2">Женский
       </label>
       <br><br>
       <h4>Количество конечностей:</h4>
       <label>
-        <input type="radio" checked="checked" name="r" value="2">2-4
+        <input type="radio" checked="checked" name="count_limb" value="2">2-4
       </label>
       <br>
       <label>
-        <input type="radio" name="r" value="5">5-7
+        <input type="radio" name="count_limb" value="5">5-7
       </label>
       <br>
       <label>
-        <input type="radio" name="r" value="7">7-9
+        <input type="radio" name="count_limb" value="8">8-10
       </label>
       <br><br>
       <label>
         <h4>Сверхспособности:</h4>
-        <select name="Power" multiple="multiple">
+        <select name="power" multiple="multiple">
           <option value="Бессмертие">Бессмертие</option>
-          <option value="Прохождение сквозь стены" selected="selected">Прохождение сквозь стены</option>
-          <option value="Левитация" selected="selected">Левитация</option>
+          <option value="Прохождение сквозь стены" >Прохождение сквозь стены</option>
+          <option value="Левитация" >Левитация</option>
         </select>
       </label>
       <br><br>
@@ -69,7 +68,7 @@
       <br><br>
       <label>
         <h4>С контрактом ознакомлен(-а)
-        <input type="checkbox" checked="checked" name="check"> </h4>
+        <input type="checkbox" checked="checked" name="checked"> </h4>
       </label>
       <input type="submit" value="Отправить">
       </form>
