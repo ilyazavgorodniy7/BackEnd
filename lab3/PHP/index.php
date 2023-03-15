@@ -27,6 +27,7 @@ if(!preg_match($mailreg,$_POST['email'])){
         print_r('Неверный формат email');
     exit();
 }
+$mailreg = "/^[\w.-]+@([\w-]+.)+[\w-]{2,4}$/";
 if(empty($_POST['email'])){
     print_r('Заполните E-mail!');
     exit();
