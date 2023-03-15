@@ -86,9 +86,9 @@ if ($errors) {
 
 // Сохранение в базу данных.
 
-$user = 'u52826'; // Заменить на ваш логин uXXXXX
-$pass = '4927417'; // Заменить на пароль, такой же, как от SSH
-$db = new PDO('mysql:host=localhost;dbname=u52826', $user, $pass,
+$user = 'u52805'; // Заменить на ваш логин uXXXXX
+$pass = '5816061'; // Заменить на пароль, такой же, как от SSH
+$db = new PDO('mysql:host=localhost;dbname=u52805', $user, $pass,
   [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]); // Заменить test на имя БД, совпадает с логином uXXXXX
 
 // Подготовленный запрос. Не именованные метки.
