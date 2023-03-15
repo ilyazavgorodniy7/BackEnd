@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Задание 2</title>
+    <style>
+      body {
+        background: #86e0e0
+      }
+    </style>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css"/>
+  </head>
+  <body>
+<h2>Форма</h2>
+      <form action="/" method="POST">
+      <label>
+        <h4>Имя:</h4>
+        <input name="name" value="Имя">
+      </label>
+      <br>
+      <br>
+      <label>
+        <h4>e-mail:</h4>
+        <input name="email" type="email" value="Введите вашу почту">
+      </label>
+      <br>
+      <br>
+      <label>
+        <h4>Дата рождения:</h4>
+        <input name="field-date" value="2000" type="placeholder">
+      </label>
+      <br>
+      <br>
+      <h4>Пол:</h4>
+      <label>
+        <input type="radio" checked="checked" name="radio" value="Мужской"> Мужской
+      </label>
+      <br>
+      <label>
+        <input type="radio" name="radio" value="Женский">Женский
+      </label>
+      <br><br>
+      <h4>Количество конечностей:</h4>
+      <label>
+        <input type="radio" checked="checked" name="r" value="2">2-4
+      </label>
+      <br>
+      <label>
+        <input type="radio" name="r" value="5">5-7
+      </label>
+      <br>
+      <label>
+        <input type="radio" name="r" value="7">7-9
+      </label>
+      <br><br>
+      <label>
+        <h4>Сверхспособности:</h4>
+        <select name="Power" multiple="multiple">
+          <option value="Бессмертие">Бессмертие</option>
+          <option value="Прохождение сквозь стены" selected="selected">Прохождение сквозь стены</option>
+          <option value="Левитация" selected="selected">Левитация</option>
+        </select>
+      </label>
+      <br><br>
+      <label>
+        <h4>Биография:</h4>
+        <textarea name="biography">Введите текст о себе здесь</textarea>
+      </label>
+      <br><br>
+      <label>
+        <h4>С контрактом ознакомлен(-а)
+        <input type="checkbox" checked="checked" name="check"> </h4>
+      </label>
+      <input type="submit" value="Отправить">
+      </form>
+    </div>
+      </div>
