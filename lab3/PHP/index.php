@@ -27,6 +27,10 @@ if(!preg_match($mailreg,$_POST['email'])){
         print_r('Неверный формат email');
     exit();
 }
+if(empty($_POST['email'])){
+    print_r('Заполните E-mail!');
+    exit();
+}
 if (empty($_POST['year']) || !is_numeric($_POST['year']) || !preg_match('/^\d+$/', $_POST['year'])) {
   print('Заполните год.<br/>');
   $errors = TRUE;
