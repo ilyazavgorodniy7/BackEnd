@@ -11,47 +11,70 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Если есть параметр save, то выводим сообщение пользователю.
     print('Спасибо, результаты сохранены.');
   }
-  // Включаем содержимое файла form.php.
+
   // Завершаем работу скрипта.
   exit();
 }
 // Иначе, если запрос был методом POST, т.е. нужно проверить данные и сохранить их в XML-файл.
 
 // Проверяем ошибки.
+
+$bioreg = "/^\s*\w+[\w\s\.,-]*$/";
+$reg = "/^\w+[\w\s-]*$/";
+$mailreg = "/^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$/";
+$list_abilities = array('immortality','pass_through_walls','levitation');
+
 $errors = FALSE;
-if (empty($_POST['fio'])) {
-  print('Заполните имя.<br/>');
-  $errors = TRUE;
+if(empty($_POST['name'])){
+	print_r('Заполните Имя');
+	exit();
 }
+if(empty($_POST['email'])){
+	print_r('Заполните E-mail');
+	exit();
+}
+if(empty($_POST['year'])){
+	print_r('Заполните год');
+	exit();
+}
+if(empty($_POST['biography'])){
+	print_r('Заполните биографию');
+	exit();
+}
+if(empty($_POST['gender'])){
+	print_r('Заполните пол');
+	exit();
+}
+if(empty($_POST['count_limb'])){
+	print_r('Заполните кол-во конечностей');
+	exit();
+}
+
 if(!preg_match($mailreg,$_POST['email'])){
         print_r('Неверный формат email');
-    exit();
+	exit();
 }
-$mailreg = "/^[\w.-]+@([\w-]+.)+[\w-]{2,4}$/";
-if(empty($_POST['email'])){
-    print_r('Заполните E-mail!');
-    exit();
-}
+
 if (empty($_POST['year']) || !is_numeric($_POST['year']) || !preg_match('/^\d+$/', $_POST['year'])) {
-  print('Заполните год.<br/>');
-  $errors = TRUE;
+ 	print('Неверно указан год.<br/>');
+	exit();
 }
-if (empty($_POST['gender'])) {
-  print('Заполните гендер.<br/>');
-  $errors = TRUE;
+
+if(!preg_match($reg,$_POST['name'])){
+	print_r('Неверный формат имени');
+	exit();
 }
-if (empty($_POST['count_limb'])) {
-  print('Заполните кол-во конечностей.<br/>');
-  $errors = TRUE;
+if(!preg_match($bioreg,$_POST['biography'])){
+	print_r('Неверный формат биографии');
+	exit();
 }
-if (empty($_POST['biography'])) {
-  print('Заполните биографию.<br/>');
-  $errors = TRUE;
+foreach($abilities as $checking){
+	if(array_search($checking,$list_abilities)=== false){
+		print_r('Неверный формат суперсил');
+		exit();
+	}
 }
-if (empty($_POST['checked'])) {
-  print('Примите согласие.<br/>');
-  $errors = TRUE;
-}
+
 // *************
 // Тут необходимо проверить правильность заполнения всех остальных полей.
 // *************
@@ -63,20 +86,35 @@ if ($errors) {
 
 // Сохранение в базу данных.
 
-$user = 'u52805'; // Заменить на ваш логин uXXXXX
-$pass = '5816061'; // Заменить на пароль, такой же, как от SSH
-$db = new PDO('mysql:host=localhost;dbname=u52805', $user, $pass,
+$user = 'u52826'; // Заменить на ваш логин uXXXXX
+$pass = '4927417'; // Заменить на пароль, такой же, как от SSH
+$db = new PDO('mysql:host=localhost;dbname=u52826', $user, $pass,
   [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]); // Заменить test на имя БД, совпадает с логином uXXXXX
 
 // Подготовленный запрос. Не именованные метки.
+$abilities = array($_POST['abilities']);
+$list_abilities = array('immortality','pass_through_walls','levitation');
 try {
-  $stmt = $db->prepare("INSERT INTO person SET name = ?,email= ?, year= ?, gender=?, count_limb=?,biography=?,checked=?");
-  $stmt->execute([$_POST['fio'],$_POST['email'],$_POST['year'],$_POST['gender'],$_POST['count_limb'],$_POST['biography'],$_POST['checked']]);
+  $stmt = $db->prepare("INSERT INTO person SET name = ?,email= ?, year= ?, gender= ?, count_limb= ?, biography= ?,checked= ?");
+  $stmt->execute([$_POST['name'],$_POST['email'],$_POST['year'],$_POST['gender'],$_POST['count_limb'],$_POST['biography'],$_POST['checked']]);
+  
+  $id = $db->lastInsertId();
+  $sppe= $db->prepare("INSERT INTO abilities SET name=:name, person_id=:person");
+  $sppe->bindParam(':person', $id);
+  foreach($abilities  as $ability){
+	$sppe->bindParam(':name', $ability);
+	if($sppe->execute()==false){
+	  print_r($sppe->errorCode());
+	  print_r($sppe->errorInfo());
+	  exit();
+	}
+  }
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
   exit();
 }
+
 
 //  stmt - это "дескриптор состояния".
  
