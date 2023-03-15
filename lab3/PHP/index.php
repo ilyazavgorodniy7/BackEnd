@@ -23,7 +23,7 @@ if (empty($_POST['fio'])) {
   print('Заполните имя.<br/>');
   $errors = TRUE;
 }
-if (empty($_POST['mail']) || !preg_match('/@/', $_POST['mail']) ) {
+if (empty($_POST['email']) || !preg_match('/@/', $_POST['email']) ) {
   print('Заполните почту правильно.<br/>');
   $errors = TRUE;
 }
@@ -66,8 +66,8 @@ $db = new PDO('mysql:host=localhost;dbname=u52805', $user, $pass,
 
 // Подготовленный запрос. Не именованные метки.
 try {
-  $stmt = $db->prepare("INSERT INTO person SET name = ?,mail= ?, year= ?, gender=?, count_limb=?,biography=?,checked=?");
-  $stmt->execute([$_POST['fio'],$_POST['mail'],$_POST['year'],$_POST['gender'],$_POST['count_limb'],$_POST['biography'],$_POST['checked']]);
+  $stmt = $db->prepare("INSERT INTO person SET name = ?,email= ?, year= ?, gender=?, count_limb=?,biography=?,checked=?");
+  $stmt->execute([$_POST['fio'],$_POST['email'],$_POST['year'],$_POST['gender'],$_POST['count_limb'],$_POST['biography'],$_POST['checked']]);
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
