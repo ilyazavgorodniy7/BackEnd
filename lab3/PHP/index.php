@@ -22,7 +22,7 @@ $abilities = array($_POST['abilities']);
 $bioreg = "/^\s*\w+[\w\s\.,-]*$/";
 $reg = "/^\w+[\w\s-]*$/";
 $mailreg = "/^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$/";
-$list_abilities = array('Бессмертие','Прохождение сквозь стены','Левитация');
+$list_abilities = array('immortality','pass_through_walls','levitation');
 
 $errors = FALSE;
 if(empty($_POST['name'])){
@@ -93,7 +93,7 @@ $db = new PDO('mysql:host=localhost;dbname=u52805', $user, $pass,
 
 // Подготовленный запрос. Не именованные метки.
 
-$list_abilities = array('Бессмертие','Прохождение сквозь стены','Левитация');
+$list_abilities = array('immortality','pass_through_walls','levitation');
 try {
   $stmt = $db->prepare("INSERT INTO person SET name = ?,email= ?, year= ?, gender= ?, count_limb= ?, biography= ?,checked= ?");
   $stmt->execute([$_POST['name'],$_POST['email'],$_POST['year'],$_POST['gender'],$_POST['count_limb'],$_POST['biography'],$_POST['checked']]);
