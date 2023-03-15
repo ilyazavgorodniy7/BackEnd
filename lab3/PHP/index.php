@@ -70,7 +70,7 @@ if(!preg_match($bioreg,$_POST['biography'])){
 }
 foreach($abilities as $checking){
 	if(array_search($checking,$list_abilities)=== false){
-		print_r('Неверный формат суперсил');
+		print_r('Неверный формат абилки');
 		exit();
 	}
 }
