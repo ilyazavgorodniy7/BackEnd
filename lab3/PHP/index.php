@@ -23,11 +23,10 @@ if (empty($_POST['fio'])) {
   print('Заполните имя.<br/>');
   $errors = TRUE;
 }
-if (empty($_POST['email']) || !preg_match('/@/', $_POST['email']) ) {
-  print('Заполните почту правильно.<br/>');
-  $errors = TRUE;
+if(!preg_match($mailreg,$_POST['email'])){
+        print_r('Неверный формат email');
+    exit();
 }
-
 if (empty($_POST['year']) || !is_numeric($_POST['year']) || !preg_match('/^\d+$/', $_POST['year'])) {
   print('Заполните год.<br/>');
   $errors = TRUE;
