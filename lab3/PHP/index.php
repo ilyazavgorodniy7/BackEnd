@@ -22,7 +22,7 @@ $abilities = array($_POST['abilities']);
 $bioreg = "/^\s*\w+[\w\s\.,-]*$/";
 $reg = "/^\w+[\w\s-]*$/";
 $mailreg = "/^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$/";
-$list_abilities = array('immortality','pass_through_walls','levitation');
+$list_abilities = array('1','2','3');
 
 $errors = FALSE;
 if(empty($_POST['name'])){
