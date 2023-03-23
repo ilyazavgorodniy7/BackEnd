@@ -1,76 +1,80 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <style>
-      body {
-        background: #86e0e0
-      }
-    </style>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./style.css"/>
-  </head>
-  <body>
-<h2>Форма</h2>
-      <form action="index.php" method="POST">
-      <label>
-        <h4>Имя:</h4>
-        <input name="name" placeholder="Имя">
-      </label>
-      <br>
-      <br>
-      <label>
-        <h4>e-mail:</h4>
-        <input name="email" type="email" placeholder="Введите вашу почту">
-      </label>
-      <br>
-      <br>
-      <label>
-        <h4>Дата рождения:</h4>
-        <input name="year" placeholder="2000" type="placeholder">
-      </label>
-      <br>
-      <br>
-      <h4>Пол:</h4>
-      <label>
-        <input type="radio" checked="checked" name="gender" value="1"> Мужской
-      </label>
-      <br>
-      <label>
-        <input type="radio" name="gender" value="2">Женский
-      </label>
-      <br><br>
-      <h4>Количество конечностей:</h4>
-      <label>
-        <input type="radio" checked="checked" name="count_limb" value="2">2-4
-      </label>
-      <br>
-      <label>
-        <input type="radio" name="count_limb" value="5">5-7
-      </label>
-      <br>
-      <label>
-        <input type="radio" name="count_limb" value="8">8-10
-      </label>
-      <br><br>
-      <label>
-        <h4>Сверхспособности:</h4>
-        <select name="abilities[]" multiple="multiple">
-          <option value="1">Бессмертие</option>
-          <option value="2" >Прохождение сквозь стены</option>
-          <option value="3" >Левитация</option>
-        </select>
-      </label>
-      <br><br>
-      <label>
-        <h4>Биография:</h4>
-        <textarea name="biography" placeholder="Введите текст о себе"></textarea>
-      </label>
-      <br><br>
-      <label>
-        <h4>С контрактом ознакомлен(-а)
-        <input type="checkbox" name="checked"> </h4>
-      </label>
-      <input type="submit" value="Отправить">
-      </form>
-    </div>
-      </div>
+<link rel="stylesheet" href="style.css" type="text/css">
+<form action="index.php" method="POST">
+    <label>
+    <?php
+      printf('Имя:');
+    ?>
+    <br>
+    <input name="name" placeholder="name">
+    </label>
+    <label>
+    <?php
+      printf('E-mail:');
+    ?>
+    <br>
+    <input name="email" type="email" placeholder="email">
+    </label>
+    <label>
+    <?php
+      printf('Год рождения:');
+    ?>
+    <br>
+    <input name="year" placeholder="year">
+    </label>
+    <label>
+    <?php
+      printf('Гендер:');
+    ?>
+    <br>
+    <?php
+      printf('Мужской');
+    ?>
+    <input type="radio" name="gender" value="1">
+    <?php
+      printf('Женский');
+    ?>
+    <input type="radio" name="gender" value="2">
+    </label>
+    <label>
+    <?php
+      printf('Количество конечностей: ');
+      printf('2-4');
+    ?>
+    <input type="radio" value="1" name="count_limb">
+    <?php
+      printf('5-7');
+    ?>
+    <input type="radio" value="2" name="count_limb">
+    <?php
+      printf('8-10');
+    ?>
+    <input type="radio" value="3" name="count_limb">
+    </label>
+    <label>
+    <?php
+      printf('Сверхспособности:');
+    ?>
+    <br>
+    <select name="abilities[]" multiple="multiple"> 
+      <option value="1">Бессмертие</option>
+      <option value="2">Проходить сквозь стены</option>
+      <option value="3">Левитация</option>
+    </select>
+    </label>
+    <label>
+    <?php
+      printf('О себе:');
+    ?>
+    <br>
+    <textarea name="biography" placeholder="about me"></textarea>
+    </label>
+    <label>
+    <?php
+      printf('С контрактом ознакомлен(-а)');
+    ?>
+    <input type="checkbox" name="checked" value="on">
+    </label>
+    <label>
+    <input type="submit" value="ok" class="button"/>
+    </label>
+  </form>
