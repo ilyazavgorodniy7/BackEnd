@@ -1,6 +1,6 @@
 body{
     text-align: left;
-    background-color: #dd4492;
+    background-color: #7B68EE;
 }
 form{
     display:flex;
@@ -8,10 +8,9 @@ form{
     gap:10px;
 }
 button{
-    background-color: darkcyan;
-    box-shadow: -2px -2px 0 black;
+    background-color: #7B68EE;
 }
 input,textarea,select{
-    background-color: darkcyan;
+    background-color: #7B68EE;
     color: black;
 }
