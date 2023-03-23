@@ -22,7 +22,7 @@ include('form.php');
 $bioreg = "/^\s*\w+[\w\s\.,-]*$/";
 $reg = "/^\w+[\w\s-]*$/";
 $mailreg = "/^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$/";
-$list_abilities = array('1','2','3');
+$list_super_power = array('1','2','3');
 
 $errors = FALSE;
 if(empty($_POST['name'])){
@@ -69,7 +69,7 @@ if(!preg_match($bioreg,$_POST['biography'])){
 	exit();
 }
 foreach($_POST['super_power'] as $checking){
-	if(array_search($checking,$list_abilities)=== false){
+	if(array_search($checking,$list_super_power)=== false){
 		print_r('Неверный формат суперсил');
 		exit();
 	}
