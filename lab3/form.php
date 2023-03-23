@@ -55,7 +55,7 @@
       printf('Сверхспособности:');
     ?>
     <br>
-    <select name="abilities[]" multiple="multiple"> 
+    <select name="super_power[]" multiple="multiple"> 
       <option value="1">Бессмертие</option>
       <option value="2">Проходить сквозь стены</option>
       <option value="3">Левитация</option>
