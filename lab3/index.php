@@ -99,8 +99,8 @@ try {
   $id = $db->lastInsertId();
   $sppe= $db->prepare("INSERT INTO super_power SET power_id=:power, person_id=:person");
   $sppe->bindParam(':person', $id);
-  foreach($_POST['super_power']  as $ability){
-	$sppe->bindParam(':power', $ability);
+  foreach($_POST['super_power']  as $power){
+	$sppe->bindParam(':power', $power);
 	if($sppe->execute()==false){
 	  print_r($sppe->errorCode());
 	  print_r($sppe->errorInfo());
