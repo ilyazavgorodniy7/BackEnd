@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   // Завершаем работу скрипта.
   exit();
 }
+include('form.php');
 // Иначе, если запрос был методом POST, т.е. нужно проверить данные и сохранить их в XML-файл.
 
 // Проверяем ошибки.
@@ -97,9 +98,9 @@ try {
   $stmt->execute([$_POST['name'],$_POST['email'],$_POST['year'],$_POST['gender'],$_POST['count_limb'],$_POST['biography'],$_POST['checked']]);
   
   $id = $db->lastInsertId();
-  $sppe= $db->prepare("INSERT INTO super_power SET power=:power, person_id=:person");
+  $sppe= $db->prepare("INSERT INTO super_power SET power_id=:power, person_id=:person");
   $sppe->bindParam(':person', $id);
-  foreach($abilities  as $ability){
+  foreach($_POST['super_power']  as $ability){
 	$sppe->bindParam(':power', $ability);
 	if($sppe->execute()==false){
 	  print_r($sppe->errorCode());
