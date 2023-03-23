@@ -19,7 +19,6 @@ include('form.php');
 // Иначе, если запрос был методом POST, т.е. нужно проверить данные и сохранить их в XML-файл.
 
 // Проверяем ошибки.
-$abilities = array($_POST['abilities']);
 $bioreg = "/^\s*\w+[\w\s\.,-]*$/";
 $reg = "/^\w+[\w\s-]*$/";
 $mailreg = "/^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$/";
@@ -69,7 +68,7 @@ if(!preg_match($bioreg,$_POST['biography'])){
 	print_r('Неверный формат биографии');
 	exit();
 }
-foreach($abilities as $checking){
+foreach($_POST['super_power'] as $checking){
 	if(array_search($checking,$list_abilities)=== false){
 		print_r('Неверный формат суперсил');
 		exit();
