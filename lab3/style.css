@@ -1,6 +1,6 @@
 body{
-    text-align: center;
-    background-color: darkcyan;
+    text-align: left;
+    background-color: #dd4492;
 }
 form{
     display:flex;
