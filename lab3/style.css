@@ -1,0 +1,17 @@
+body{
+    text-align: center;
+    background-color: darkcyan;
+}
+form{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+button{
+    background-color: darkcyan;
+    box-shadow: -2px -2px 0 black;
+}
+input,textarea,select{
+    background-color: darkcyan;
+    color: black;
+}
