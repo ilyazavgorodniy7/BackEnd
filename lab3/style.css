@@ -3,6 +3,7 @@ body{
     background-color: #2F4F4F;
 }
 form{
+    text-align: center;
     display:flex;
     flex-direction: column;
     gap:10px;
