@@ -1,14 +1,14 @@
 body{
     text-align: center;
-    margin:0 auto;
     background-color: #2F4F4F;
+    align-items: center;  
+    justify-content: center;
 }
 form{
     display:flex;
     flex-direction: column;
     gap:10px;
-    align-items: center;  
-    justify-content: center;
+    
 }
 button{
     background-color: #2F4F4F;
