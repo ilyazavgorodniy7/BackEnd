@@ -1,7 +1,8 @@
 body{
     text-align: center;
     background-color: #2F4F4F;
-    vertical-align: middle
+    margin-left: auto;
+    margin-right: auto;
 }
 form{
     display:flex;
