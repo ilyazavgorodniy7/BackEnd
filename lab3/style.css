@@ -3,8 +3,6 @@ body{
     background-color: #2F4F4F;
 }
 .form{
-    display:flex;
-    flex-direction: column;
     gap:10px;
     text-align:center;
 }
