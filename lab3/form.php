@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <form action="index.php" method="POST">
-    <div class="form">
     <label>
     <?php
       printf('Имя:');
@@ -78,5 +77,4 @@
     <label>
     <input type="submit" value="ok" class="button"/>
     </label>
-    </div>
   </form>
