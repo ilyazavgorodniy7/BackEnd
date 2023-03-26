@@ -1,9 +1,8 @@
 body{
     text-align: center;
     background-color: #2F4F4F;
-    margin-left: auto;
-    margin-right: auto;
-    width: 6em
+    width:150px;
+    height: 200px;
 }
 form{
     display:flex;
