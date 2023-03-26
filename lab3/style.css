@@ -1,6 +1,7 @@
 body{
     text-align: center;
     margin:0 auto;
+    background-color: #2F4F4F;
 }
 form{
     display:flex;
