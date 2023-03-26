@@ -6,6 +6,7 @@ form{
     display:flex;
     flex-direction: column;
     gap:10px;
+    text-align:center;
 }
 button{
     background-color: #2F4F4F;
