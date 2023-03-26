@@ -52,6 +52,10 @@ if (empty($_POST['year']) || !is_numeric($_POST['year']) || !preg_match('/^\d+$/
  	print('Неверно указан год.<br/>');
 	exit();
 }
+if(empty($_POST['checked'])){
+ print('Примите согласие');
+ exit();
+}
 if(!preg_match($reg,$_POST['name'])){
 	print_r('Неверный формат имени');
 	exit();
@@ -60,6 +64,7 @@ if(!preg_match($bioreg,$_POST['biography'])){
 	print_r('Неверный формат биографии');
 	exit();
 }
+
 foreach($_POST['super_power'] as $checking){
 	if(array_search($checking,$list_abilities)=== false){
 		print_r('Неверный формат суперсил');
