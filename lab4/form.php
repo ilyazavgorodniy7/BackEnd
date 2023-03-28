@@ -7,7 +7,8 @@
       .error {
         gap:2px;
         border: 2px solid purple;
-        width 100px;
+        width: 100px;
+        height: 100px;
         padding: 5px
       }
     </style>
