@@ -7,7 +7,10 @@
       .error {
       
         border: 2px solid purple;
-        gap:10px;
+        width 100px;
+border-top: 1px solid #000;
+border-bottom: 1px solid #000;
+padding: 5px
       }
     </style>
   </head>
