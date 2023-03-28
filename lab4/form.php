@@ -6,6 +6,7 @@
     <style>
       .error {
         border: 2px solid purple;
+        width 1em;
       }
     </style>
   </head>
