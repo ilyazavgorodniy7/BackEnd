@@ -5,7 +5,7 @@
   <head>
     <style>
       .error {
-        width: 2px solid purple;
+        border-width: 2px solid purple;
       }
     </style>
   </head>
