@@ -5,12 +5,10 @@
   <head>
     <style>
       .error {
-      
+        gap:2px;
         border: 2px solid purple;
         width 100px;
-border-top: 1px solid #000;
-border-bottom: 1px solid #000;
-padding: 5px
+        padding: 5px
       }
     </style>
   </head>
