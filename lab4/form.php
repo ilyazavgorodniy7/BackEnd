@@ -83,7 +83,7 @@
         <option value="3">Левитация</option>
       </select>
       </label>
-      <label <?php if ($errors['biography']) {print 'class="error"';} ?> count_limb_value="<?php print $values['biography']; ?>">
+      <label>
       <?php
         printf('Биография:');
       ?>
