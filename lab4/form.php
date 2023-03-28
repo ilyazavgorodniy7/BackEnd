@@ -81,7 +81,7 @@
         <option value="3">Левитация</option>
       </select>
       </label>
-      <label ?php if ($errors['biography']) {print 'class="error"';} ?> count_limb_value="<?php print $values['biography']; ?>">
+      <label <?php if ($errors['biography']) {print 'class="error"';} ?> count_limb_value="<?php print $values['biography']; ?>">
       <?php
         printf('Биография:');
       ?>
@@ -94,7 +94,7 @@
       ?>
       <input type="checkbox" name="checked" value="on">
       </label>
-      <label ?php if ($errors['checked']) {print 'class="error"';} ?> count_limb_value="<?php print $values['checked']; ?>">
+      <label <?php if ($errors['checked']) {print 'class="error"';} ?> count_limb_value="<?php print $values['checked']; ?>">
       <input type="submit" value="ok" class="button"/>
       </label>
     </form>
