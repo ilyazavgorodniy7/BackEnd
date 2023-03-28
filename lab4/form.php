@@ -62,15 +62,15 @@
         printf('Количество конечностей: ');
         printf('1');
       ?>
-      <input type="radio" value="1" name="count_limb">
+      <input type="radio" value="2-4" name="count_limb">
       <?php
         printf('2');
       ?>
-      <input type="radio" value="2" name="count_limb">
+      <input type="radio" value="5-7" name="count_limb">
       <?php
         printf('3');
       ?>
-      <input type="radio" value="3" name="count_limb">
+      <input type="radio" value="8-10" name="count_limb">
       </label>
       <label <?php if ($errors['super_power']) {print 'class="error"';} ?> count_limb_value="<?php print $values['super_power']; ?>">
       <?php
