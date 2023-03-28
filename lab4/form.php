@@ -88,15 +88,15 @@
         printf('Биография:');
       ?>
       <br>
-      <textarea name="biography" placeholder="about me"></textarea>
+      <textarea name="biography" placeholder="about me" <?php if ($errors['biography']) {print 'class="error"';} ?> count_limb_value="<?php print $values['biography']; ?>">></textarea>
       </label>
-      <label>
+      <label <?php if ($errors['checked']) {print 'class="error"';} ?> count_limb_value="<?php print $values['checked']; ?>"> 
       <?php
         printf('С контрактом ознакомлен(-а)');
       ?>
       <input type="checkbox" name="checked" value="on">
       </label>
-      <label <?php if ($errors['checked']) {print 'class="error"';} ?> count_limb_value="<?php print $values['checked']; ?>">
+      <label
       <input type="submit" value="ok" class="button"/>
       </label>
     </form>
