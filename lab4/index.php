@@ -127,7 +127,6 @@ if (empty($_POST['super_power'])){
 	}
 else {
     	setcookie('super_power_value', $_POST['super_power'], time() + 30 * 24 * 60 * 60 * 12);
-  }
 }
 
   if ($errors) {
