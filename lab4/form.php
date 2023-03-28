@@ -75,12 +75,12 @@
       ?>
       <input type="radio" value="3" name="count_limb">
       </label>
-      <label>
+      <label <?php if ($errors['super_power']) {print 'class="error"';} ?> super_power_value="<?php print $values['super_power']; ?>">
       <?php
         printf('Сверхспособности:');
       ?>
       <br>
-      <select name="super_power[]" multiple="multiple" <?php if ($errors['super_power']) {print 'class="error"';} ?> super_power_value="<?php print $values['super_power']; ?>"> 
+      <select name="super_power[]" multiple="multiple"> 
         <option value="1">Бессмертие</option>
         <option value="2">Проходить сквозь стены</option>
         <option value="3">Левитация</option>
