@@ -3,7 +3,7 @@
 </header>
 <?php
 header('Content-Type: text/html; charset=UTF-8');
-
+<body>
 session_start();
 if (!empty($_SESSION['login'])) {
   header('Location: ./');
@@ -24,3 +24,4 @@ else {
   $_SESSION['uid'] = 123;
   header('Location: ./');
 }
+</body>
