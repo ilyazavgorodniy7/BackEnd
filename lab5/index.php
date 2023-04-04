@@ -17,7 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     strip_tags($_COOKIE['password']));
     }
   }
-  }
   $errors = array();
   $errors['name'] = !empty($_COOKIE['name_error']);
   $errors['year'] = !empty($_COOKIE['year_error']);
