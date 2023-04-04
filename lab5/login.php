@@ -7,7 +7,7 @@ header('Content-Type: text/html; charset=UTF-8');
 
 session_start();
 if (!empty($_SESSION['login'])) {
-  header('Location: ./');
+  header('Location: ./login.php');
 }
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 ?>
@@ -23,5 +23,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 else {
   $_SESSION['login'] = $_POST['login'];
   $_SESSION['uid'] = 123;
-  header('Location: ./');
+  header('Location: ./form.php');
 }
