@@ -3,6 +3,8 @@ body{
     background-color: #2F4F4F;
     margin-left: auto;
     margin-right: auto;
+    width:200px;
+    text-align:center;
 }
 form{
     display:flex;
@@ -16,8 +18,4 @@ button{
 input,textarea,select{
     background-color: #2F4F4F;
     color: black;
-}
-header_l{
-    width:200px;
-    text-align:center;
 }
