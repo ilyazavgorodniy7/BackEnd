@@ -8,7 +8,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $messages = array();
   if (!empty($_COOKIE['save'])) {
     setcookie('save', '', 100000);
+    setcookie('login', '', 100000);
+    setcookie('password', '', 100000);
     $messages[] = 'Спасибо, результаты сохранены.';
+    if (!empty($_COOKIE['password'])) {
+    $messages[] = sprintf('Вы можете <a href="login.php">войти</a> с логином <strong>%s</strong> и паролем <strong>%s</strong> для изменения данных.',
+    strip_tags($_COOKIE['user_id']),
+    strip_tags($_COOKIE['password']));
+    }
+  }
   }
   $errors = array();
   $errors['name'] = !empty($_COOKIE['name_error']);
@@ -62,7 +70,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $values['biography'] = empty($_COOKIE['biography_value']) ? '' : $_COOKIE['biography_value'];
   $values['checked'] = empty($_COOKIE['checked_value']) ? '' : $_COOKIE['checked_value'];
   $values['super_power'] = empty($_COOKIE['super_power_value']) ? '' : $_COOKIE['super_power_value'];
-
   include('form.php');
 }
 else {
@@ -157,6 +164,39 @@ else {
     print('Error : ' . $e->getMessage());
     exit();
   }
+  if (!empty($_COOKIE[session_name()]) && session_start() && !empty($_SESSION['login'])) {
+    // TODO: перезаписать данные в БД новыми данными,
+    // кроме логина и пароля.
+}
+else {
+    // Генерируем уникальный логин и пароль.
+    // TODO: сделать механизм генерации, например функциями rand(), uniquid(), md5(), substr().
+    $login = $db->lastInsertId();;
+    $password = '';
+    $arr = array('a','b','c','d','e','f',
+                 'g','h','i','j','k','l',
+                 'm','n','o','p','r','s',
+                 't','u','v','x','y','z',
+                 'A','B','C','D','E','F',
+                 'G','H','I','J','K','L',
+                 'M','N','O','P','R','S',
+                 'T','U','V','X','Y','Z',
+                 '1','2','3','4','5','6',
+                 '7','8','9','0','.',',',
+                 '(',')','[',']','!','?',
+                 '&','^','%','@','*','$',
+                 '<','>','/','|','+','-',
+                 '{','}','`','~');
+    for($i = 0; $i < $number; $i++)
+    {
+      $index = rand(0, count($arr) - 1);
+      $password .= $arr[$index];
+    }
+    // Сохраняем в Cookies.
+    setcookie('login', $login);
+    setcookie('password', $password);
+
+    // TODO: Сохранение данных формы, логина и хеш md5() пароля в базу данных.
   setcookie('save', '1');
   header('Location: ?save=1');
 }
