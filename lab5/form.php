@@ -21,6 +21,7 @@
     print('</div>');
   }
   ?>
+  <a href="login.php" target="_blank"><button>Logs</button></a>
   <form action="index.php" method="POST">
       <label>
       <?php
