@@ -1,4 +1,4 @@
-<header>
+<header class="header_l">
  <link rel="stylesheet" href="style.css" type="text/css">
 </header>
 <?php
