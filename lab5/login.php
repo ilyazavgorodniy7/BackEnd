@@ -12,9 +12,9 @@ if (!empty($_SESSION['login'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 ?>
 <body>
-<form action="" method="post">
-  <input name="login" />
-  <input name="password" />
+<form action="index.php" method="post">
+  <input name="login" placeholder="login"/>
+  <input name="password" placeholder="password"/>
   <input type="submit" value="Войти" />
 </form>
 </body>
