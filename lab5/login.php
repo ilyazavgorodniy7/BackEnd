@@ -7,7 +7,7 @@ header('Content-Type: text/html; charset=UTF-8');
 
 session_start();
 if (!empty($_SESSION['login'])) {
-  header('Location: ./login.php');
+  header('Location: ./form.php');
 }
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 ?>
