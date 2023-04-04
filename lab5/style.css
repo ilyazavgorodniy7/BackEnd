@@ -17,3 +17,7 @@ input,textarea,select{
     background-color: #2F4F4F;
     color: black;
 }
+header_l{
+    width:200px;
+    text-align:center;
+}
