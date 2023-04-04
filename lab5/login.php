@@ -22,6 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 }
 else {
   $_SESSION['login'] = $_POST['login'];
-  $_SESSION['uid'] = 123;
+  $_SESSION['user_id'] = $db->lastInsertId();
   header('Location: ./form.php');
 }
