@@ -189,10 +189,15 @@ else {
                  '&','^','%','@','*','$',
                  '<','>','/','|','+','-',
                  '{','}','`','~');
-    for($i = 0; $i < $number; $i++)
+     for($i = 0; $i < $number; $i++)
     {
       $index = rand(0, count($arr) - 1);
       $password .= $arr[$index];
+    }
+    for($i = 0; $i < $number; $i++)
+    {
+      $index = rand(0, count($arr) - 1);
+      $login .= $arr[$index];
     }
     // Сохраняем в Cookies.
     setcookie('login', $login);
