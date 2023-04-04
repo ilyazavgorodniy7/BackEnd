@@ -197,8 +197,7 @@ else {
     // Сохраняем в Cookies.
     setcookie('login', $login);
     setcookie('password', $password);
-
-    // TODO: Сохранение данных формы, логина и хеш md5() пароля в базу данных.
+}
   setcookie('save', '1');
   header('Location: ?save=1');
 }
