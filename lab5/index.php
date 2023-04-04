@@ -174,6 +174,7 @@ else {
     // Генерируем уникальный логин и пароль.
     // TODO: сделать механизм генерации, например функциями rand(), uniquid(), md5(), substr().
     $login = $db->lastInsertId();;
+    $login = '';
     $password = '';
     $arr = array('a','b','c','d','e','f',
                  'g','h','i','j','k','l',
