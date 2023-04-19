@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $errors['count_limb'] = !empty($_COOKIE['count_limb_error']);
   $errors['biography'] = !empty($_COOKIE['biography_error']);
   $errors['checked'] = !empty($_COOKIE['checked_error']);
-  $errors['super_power'] = !empty($_COOKIE['super_power_error']);
+  $errors['super_power'] = !empty($_COOKIE['super_power']);
 	
   if ($errors['name']) {
     setcookie('name_error', '', 100000);
@@ -73,7 +73,8 @@ else {
   }
   else {
     setcookie('name_value', $_POST['name'], time() + 30 * 24 * 60 * 60 * 12);
-  }	
+  }
+	
 if (empty($_POST['email']) || !preg_match($mailreg,$_POST['email'])) {
     setcookie('email_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
@@ -81,7 +82,6 @@ if (empty($_POST['email']) || !preg_match($mailreg,$_POST['email'])) {
   else {
     setcookie('email_value', $_POST['email'], time() + 30 * 24 * 60 * 60 * 12);
   }
-  
 if (empty($_POST['year']) || !is_numeric($_POST['year']) || !preg_match('/^\d+$/', $_POST['year'])) {
     setcookie('year_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
@@ -89,7 +89,6 @@ if (empty($_POST['year']) || !is_numeric($_POST['year']) || !preg_match('/^\d+$/
   else {
     setcookie('year_value', $_POST['year'], time() + 30 * 24 * 60 * 60 * 12);
   }
-  
 if (empty($_POST['biography']) || !preg_match($bioreg,$_POST['biography'])) {
     setcookie('biography_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
@@ -97,7 +96,6 @@ if (empty($_POST['biography']) || !preg_match($bioreg,$_POST['biography'])) {
   else {
     setcookie('biography_value', $_POST['biography'], time() + 30 * 24 * 60 * 60 * 12);
   }
-  
 if (empty($_POST['gender'])) {
     setcookie('gender_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
@@ -105,7 +103,6 @@ if (empty($_POST['gender'])) {
   else {
     setcookie('gender_value', $_POST['gender'], time() + 30 * 24 * 60 * 60 * 12);
   }
-  
 if (empty($_POST['count_limb'])) {
     setcookie('count_limb_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
@@ -113,26 +110,27 @@ if (empty($_POST['count_limb'])) {
   else {
     setcookie('count_limb_value', $_POST['count_limb'], time() + 30 * 24 * 60 * 60 * 12);
   }
-  
 if (empty($_POST['checked'])) {
     setcookie('checked_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   }
   else {
     setcookie('checked_value', $_POST['checked'], time() + 30 * 24 * 60 * 60 * 12);
-  }	
-if (empty($_POST['super_power'])){
+  }
+
+if(empty($_POST['super_power'])){
 	setcookie('super_power_error', '1', time() + 24 * 60 * 60);
 	$errors = TRUE;
-	}
+}
 else {
     	setcookie('super_power_value', $_POST['super_power'], time() + 30 * 24 * 60 * 60 * 12);
-}
+ }
 
   if ($errors) {
     header('Location: index.php');
     exit();
   }
+
   $user = 'u52805';
   $pass = '5816061';
   $db = new PDO('mysql:host=localhost;dbname=u52805', $user, $pass,
