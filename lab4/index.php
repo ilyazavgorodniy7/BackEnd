@@ -140,7 +140,7 @@ else {
 	  $stmt->execute([$_POST['name'],$_POST['email'],$_POST['year'],$_POST['gender'],$_POST['count_limb'],$_POST['biography'],$_POST['checked']]);
 
 	  $id = $db->lastInsertId();
-	  $sppe= $db->prepare("INSERT INTO super_power SET power_id=:power, person_id=:person");
+	  $sppe= $db->prepare("INSERT INTO super_power SET person_id=:person, power_id=:power");
 	  $sppe->bindParam(':person', $id);
 	  foreach($_POST['super_power']  as $ability){
 		$sppe->bindParam(':power', $ability);
