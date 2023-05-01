@@ -29,21 +29,21 @@ exit();
   }
   print('Вы успешно авторизовались и видите защищенные паролем данные. Также вы можете изменить данные или удалить пользователя');
   $users=array();
-  $list_super_powers=array();
+  $list_super_power=array();
   $sup_def=array('1','2','3');
-  $super_powers_count=array();
+  $super_power_count=array();
   try{
     $get=$db->prepare("select * from person");
     $get->execute();
     $inf=$get->fetchALL();
-    $get2=$db->prepare("select person_id,power_id from super_powers");
+    $get2=$db->prepare("select person_id,power_id from super_power");
     $get2->execute();
     $inf2=$get2->fetchALL();
-    $count=$db->prepare("select count(*) from super_powers where power_id=?");
+    $count=$db->prepare("select count(*) from super_power where power_id=?");
     foreach($sup_def as $pw){
       $i=0;
       $count->execute(array($pw));
-      $super_powers_count[]=$count->fetchAll()[$i][0];
+      $super_power_count[]=$count->fetchAll()[$i][0];
       $i++;
     }
   }
@@ -52,7 +52,7 @@ exit();
     exit();
   }
   $users=$inf;
-  $list_super_powers=$inf2;
+  $list_super_power=$inf2;
   include('table.php');
 }
 else{
