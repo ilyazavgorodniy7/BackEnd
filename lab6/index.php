@@ -13,7 +13,7 @@ try {
 if (empty($_SERVER['PHP_AUTH_USER']) ||
     empty($_SERVER['PHP_AUTH_PW']) ||
     $_SERVER['PHP_AUTH_USER'] != 'admin' ||
-    $_SERVER['PHP_AUTH_PW'] != 'qwerty') {
+    $_SERVER['PHP_AUTH_PW'] != '1234') {
   header('HTTP/1.1 401 Unauthorized');
   header('WWW-Authenticate: Basic realm="My site"');
   header('Content-Type: text/html; charset=UTF-8');
